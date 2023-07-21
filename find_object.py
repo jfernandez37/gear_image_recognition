@@ -62,7 +62,6 @@ class FindObject():
             self.cx = w//2
             self.cy = h//2
             cv2.circle(self.cv_image, (w//2, h//2), 7, (255, 255, 255), -1)
-            print("m10:",M['m10'],"m01:",M['m01'], "m00:",M['m00'])
             self.gx = int(M['m10']/M['m00'])
             self.gy = int(M['m01']/M['m00'])
             cv2.circle(self.cv_image, (self.gx,self.gy), 10, color=(0,0,255), thickness=-1)
