@@ -59,8 +59,8 @@ class FindObject():
         # print( M )
         try:
             (h, w) = self.cv_image.shape[:2]
-            self.cx = h//2
-            self.cy = h//3
+            self.cx = w//2
+            self.cy = h//2
             cv2.circle(self.cv_image, (w//2, h//2), 7, (255, 255, 255), -1)
             print("m10:",M['m10'],"m01:",M['m01'], "m00:",M['m00'])
             self.gx = int(M['m10']/M['m00'])
@@ -71,4 +71,4 @@ class FindObject():
             print("Error: Contour does not form a single shape")
 
     def find_measurements(self):
-        return (self.gx-(self.cx)) * self.gear_radius_size/self.radius, (self.gy-self.cy)*self.gear_radius_size/self.radius
+        return (self.gx-self.cx) * self.gear_radius_size/self.radius, (self.gy-self.cy)*self.gear_radius_size/self.radius
